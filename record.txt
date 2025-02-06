@@ -30,15 +30,11 @@ Test F1 Score: 0.9860219115980355
 Test Recall Score: 0.9791783905458639
 
 Random Forest
-Classification Report:
-              precision    recall  f1-score   support
-
-           0       0.96      0.98      0.97      3643
-           1       0.99      0.97      0.98      5375
-
-    accuracy                           0.98      9018
-   macro avg       0.98      0.98      0.98      9018
-weighted avg       0.98      0.98      0.98      9018
-
-
-Cross-validation scores: 0.9774 (±0.0158)
+Best parameters: {'max_features': 'sqrt', 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 300}
+Best score: 0.9812
+=== Test Score  ===
+Test set AUROC: 0.995881
+Test Accuracy Score: 0.978044
+Test F1 Score: 0.981454
+Test Recall Score: 0.974698
+=========================

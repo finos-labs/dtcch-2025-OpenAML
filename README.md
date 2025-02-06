@@ -10,11 +10,15 @@ AI Anti Money Laundering for Digital Wallels
 
 
 ### Team Information
-Cartier Huang 	<cartier.huang@duke.edu>	https://github.com/cw183
-Haochen Li 	<haochen.li2@duke.edu>	https://github.com/Harrisous
-Luciano Juvinski 	<luciano.silva@duke.edu>	https://github.com/juv1nsk1
-Yifei Ren 	<yifei.ren@duke.edu>	https://github.com/yifei888
-Yiqing Liu 	<yiqing.liu@duke.edu>	https://github.com/ludaladila
+Cartier Huang | <cartier.huang@duke.edu> | https://github.com/cw183
+
+Haochen Li | <haochen.li2@duke.edu>	| https://github.com/Harrisous
+
+Luciano Juvinski | <luciano.silva@duke.edu> | https://github.com/juv1nsk1
+
+Yifei Ren | <yifei.ren@duke.edu> | https://github.com/yifei888
+
+Yiqing Liu | <yiqing.liu@duke.edu> | https://github.com/ludaladila
 
 ### Project Structure
 1. Data sourcing and processing
