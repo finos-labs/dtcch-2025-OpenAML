@@ -1,0 +1,18 @@
+{
+    "total_transaction_count": 18,
+    "total_transaction_sum": 45.74,
+    "big_transaction_count": 355,
+    "big_transaction_sum": 48.78,
+    "small_transaction_count": 5,
+    "small_transaction_sum": 11.15,
+    "from_transaction_count": 0,
+    "from_transaction_sum": 0,
+    "to_transaction_count": 0,
+    "to_transaction_sum": 0,
+    "to_unique_wallet": 1,
+    "from_unique_wallet": 0,
+    "from_unique_big": 0,
+    "to_unique_big": 0,
+    "from_unique_small": 0,
+    "to_unique_small": 0
+}

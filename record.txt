@@ -1,0 +1,44 @@
+logistic regression
+Best Parameters: {'logreg__C': 0.1, 'logreg__penalty': 'l1', 'logreg__solver': 'saga'}
+=== Test Score ===
+Test set AUROC: 0.9240119393162092
+Test Accuracy Score: 0.8471944998891107
+Test F1 Score: 0.8759452646741087
+Test Recall Score: 0.9125867567060589
+
+CatBoost model
+Best Parameters: {'depth': 7, 'iterations': 300, 'learning_rate': 0.1, 'subsample': 0.8}
+=== Test Score ===
+Test set AUROC: 0.9975067153311632
+Test Accuracy Score: 0.9854734974495454
+Test F1 Score: 0.9876263341834325
+Test Recall Score: 0.9806790470830988
+
+XGBoost model
+Best Parameters: {'colsample_bytree': 0.8, 'learning_rate': 0.1, 'max_depth': 7, 'n_estimators': 300, 'subsample': 1.0}
+Test set AUROC: 0.9975550735505369
+Test Accuracy Score: 0.9853626081170991
+Test F1 Score: 0.987523629489603
+Test Recall Score: 0.9799287188144813
+
+LightGBM
+Best Parameters: {'colsample_bytree': 1.0, 'learning_rate': 0.1, 'max_depth': 7, 'n_estimators': 250, 'subsample': 0.8}
+=== Test Score ===
+Test set AUROC: 0.9971936715396793
+Test Accuracy Score: 0.9835883787979597
+Test F1 Score: 0.9860219115980355
+Test Recall Score: 0.9791783905458639
+
+Random Forest
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97      3643
+           1       0.99      0.97      0.98      5375
+
+    accuracy                           0.98      9018
+   macro avg       0.98      0.98      0.98      9018
+weighted avg       0.98      0.98      0.98      9018
+
+
+Cross-validation scores: 0.9774 (±0.0158)
