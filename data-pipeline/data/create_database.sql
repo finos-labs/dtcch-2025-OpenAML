@@ -243,7 +243,6 @@ insert into wallet_classification values (32,'Liquidity Providers','Positive','A
 
 -- dune
 
-https://dune.com/queries/4645936?category=abstraction&blockchain=ethereum&namespace=erc20&id=erc20_ethereum.evt_transfer
 
 
 ALTER TABLE `Sentinel`.`transactions` 

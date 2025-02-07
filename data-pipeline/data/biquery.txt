@@ -1,30 +1,11 @@
--- select  count(1) c
--- from bigquery-public-data.goog_blockchain_ethereum_mainnet_us.transactions
--- where block_timestamp > '2025-01-01'
--- and  (from_address = "0xB64fde8f199F073F41c132B9eC7aD5b61De0B1B7" or to_address = "0xB64fde8f199F073F41c132B9eC7aD5b61De0B1B7")
+select  *
+from bigquery-public-data.goog_blockchain_ethereum_mainnet_us.transactions
+where block_timestamp > '2025-01-01'
 
-select  count(1) c
-from bigquery-public-data.goog_blockchain_ethereum_mainnet_us.token_transfers
-where block_timestamp > '2024-01-01'
-and  address = "0xB64fde8f199F073F41c132B9eC7aD5b61De0B1B7" 
-
-
--- proxy
--- 0x77777feddddffc19ff86db637967013e6c6a116c --  tornado
--- 0x45750cD6A3BB2206DbeB9CbA5e68Bf909aC945E3 -- monero 
--- 0xe76c6c83af64e4c60245d8c7de953df673a7a33d -- railgun
-
--- KYc
--- 0xa090e606e30bd747d4e6245a1517ebe430f0057e -- coinbase
--- 0x28c6c06298d514db089934071355e5743bf21d60 -- binance
--- 0x3f5ce5fbfe3e9af3971dd833d26ba9b5c936f0be -- binance
--- 0xf89d7b9c864f589bbf53a82105107622b35eaa40 -- bybit
--- 0x3328f7f4a1d1c57c35df56bbf0c9dcafca309c49 -- banana gun
--- 0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F -- synthetix
-
--- select to_address, count(1) c
--- from bigquery-public-data.goog_blockchain_ethereum_mainnet_us.transactions
--- where block_timestamp > '2025-01-01'
--- group by to_address 
--- order by c desc 
--- limit 20
+select tx.block_number, tx.transaction_index, tx.to_address, tx.from_address, tx.nonce, tx.transaction_hash,lg.data 
+from bigquery-public-data.goog_blockchain_ethereum_mainnet_us.transactions tx,
+bigquery-public-data.goog_blockchain_ethereum_mainnet_us.logs lg
+where tx.block_number > 20000000 and tx.block_number < 20001000 
+and tx.block_number = lg.block_number 
+and  tx.transaction_index = lg.transaction_index
+order by tx.block_number desc

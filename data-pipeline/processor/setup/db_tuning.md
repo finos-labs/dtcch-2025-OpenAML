@@ -19,3 +19,5 @@ key_buffer_size = 256M
 max_connections = 500
 table_open_cache = 1024
 thread_cache_size = 50
+
+

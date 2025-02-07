@@ -1,40 +1,39 @@
 logistic regression
-Best Parameters: {'logreg__C': 0.1, 'logreg__penalty': 'l1', 'logreg__solver': 'saga'}
+Best Parameters: {'logreg__C': 0.1, 'logreg__penalty': 'l2', 'logreg__solver': 'liblinear'}
 === Test Score ===
-Test set AUROC: 0.9240119393162092
-Test Accuracy Score: 0.8471944998891107
-Test F1 Score: 0.8759452646741087
-Test Recall Score: 0.9125867567060589
+Test set AUROC: 0.9310284317194855
+Test Accuracy Score: 0.8551785318252384
+Test F1 Score: 0.8827648114901256
+Test Recall Score: 0.9122448979591836
 
 CatBoost model
-Best Parameters: {'depth': 7, 'iterations': 300, 'learning_rate': 0.1, 'subsample': 0.8}
+Best Parameters: {'depth': 5, 'iterations': 250, 'learning_rate': 0.25, 'subsample': 0.8}
 === Test Score ===
-Test set AUROC: 0.9975067153311632
-Test Accuracy Score: 0.9854734974495454
-Test F1 Score: 0.9876263341834325
-Test Recall Score: 0.9806790470830988
+Test set AUROC: 0.9945610874398872
+Test Accuracy Score: 0.984808161454868
+Test F1 Score: 0.9871974581814784
+Test Recall Score: 0.9799628942486085
 
 XGBoost model
-Best Parameters: {'colsample_bytree': 0.8, 'learning_rate': 0.1, 'max_depth': 7, 'n_estimators': 300, 'subsample': 1.0}
-Test set AUROC: 0.9975550735505369
-Test Accuracy Score: 0.9853626081170991
-Test F1 Score: 0.987523629489603
-Test Recall Score: 0.9799287188144813
+Best Parameters: {'colsample_bytree': 1.0, 'learning_rate': 0.1, 'max_depth': 5, 'n_estimators': 300, 'subsample': 1.0}
+=== Test Score ===
+Test set AUROC: 0.995224245356156
+Test Accuracy Score: 0.9856952761144377
+Test F1 Score: 0.9879405440777789
+Test Recall Score: 0.9803339517625231
 
 LightGBM
-Best Parameters: {'colsample_bytree': 1.0, 'learning_rate': 0.1, 'max_depth': 7, 'n_estimators': 250, 'subsample': 0.8}
+Best Parameters: {'colsample_bytree': 0.8, 'learning_rate': 0.1, 'max_depth': 7, 'n_estimators': 200, 'subsample': 0.8}
 === Test Score ===
-Test set AUROC: 0.9971936715396793
-Test Accuracy Score: 0.9835883787979597
-Test F1 Score: 0.9860219115980355
-Test Recall Score: 0.9791783905458639
+Test set AUROC: 0.9947689890830542
+Test Accuracy Score: 0.9841428254601907
+Test F1 Score: 0.9866217606885583
+Test Recall Score: 0.9782931354359926
 
 Random Forest
 Best parameters: {'max_features': 'sqrt', 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 300}
-Best score: 0.9812
 === Test Score  ===
-Test set AUROC: 0.995881
-Test Accuracy Score: 0.978044
-Test F1 Score: 0.981454
-Test Recall Score: 0.974698
-=========================
+Test set AUROC: 0.992287
+Test Accuracy Score: 0.980927
+Test F1 Score: 0.983940
+Test Recall Score: 0.977732

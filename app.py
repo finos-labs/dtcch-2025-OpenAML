@@ -3,6 +3,7 @@ import joblib
 import numpy as np
 import os
 import pandas as pd
+from scipy.special import softmax
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -16,11 +17,6 @@ model_random_forest = joblib.load(os.path.join('models','RandomForest.joblib'))
 
 # Load the scaler
 scaler = joblib.load(os.path.join("models", "scaler.pkl"))
-
-def softmax(x):
-    """Compute softmax values for each set of scores in x."""
-    e_x = np.exp(x - np.max(x))
-    return e_x / e_x.sum(axis=0)
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -46,16 +42,28 @@ def predict():
         prob_random_forest = model_random_forest.predict_proba(df)[:,0]
         
         # Concatenate probabilities into a single array
-        all_probabilities = np.concatenate((
+        all_probabilities = np.vstack((
             prob_catboost,
             prob_lightgbm,
             prob_xgboost,
             prob_logistic_regression,
             prob_random_forest
-        ))
-        
+        )).T  # Shape: (n_samples, n_models)
+        softmax_probabilities = softmax(all_probabilities, axis=1) 
+        final_probabilities_soft_voting = np.mean(softmax_probabilities, axis=1)
+
         # Return the concatenated probabilities as JSON
-        return jsonify({'probabilities': all_probabilities.tolist()})
+        return jsonify(
+            {'prediction_breakdown': 
+                {
+                    'catboost': prob_catboost.tolist()[0],
+                    'lightgbm': prob_lightgbm.tolist()[0],
+                    'xgboost': prob_xgboost.tolist()[0],
+                    'logistic_regression': prob_logistic_regression.tolist()[0],
+                    'random_forest': prob_random_forest.tolist()[0]
+                },
+            'final_prediction':final_probabilities_soft_voting.tolist()[0]
+        })
     
     except Exception as e:
         return jsonify({'error': str(e)}), 500

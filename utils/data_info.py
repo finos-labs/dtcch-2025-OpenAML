@@ -15,5 +15,5 @@ def main(filepath):
     
 
 if __name__ == "__main__":
-    filepath = os.path.join("data","processed.csv") # or raw.csv
+    filepath = os.path.join("data","raw.csv") # or raw.csv
     main(filepath=filepath)
