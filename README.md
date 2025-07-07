@@ -1,118 +1,22 @@
 ![badge-labs](https://user-images.githubusercontent.com/327285/230928932-7c75f8ed-e57b-41db-9fb7-a292a13a1e58.svg)
 
-# FINOS DTCC Hackathon 
-
-
-## Project Name
-AI Anti Money Laundering for Digital Wallels
+## OpenAML
+Open and Intelligent Compliance for On-Chain Anti-Money Laundering.
 
 ### Project Details
 
+**OpenAML** is an open-source initiative under the stewardship of the [Fintech Open Source Foundation (FINOS)](https://www.finos.org/), a nonprofit organization within the Linux Foundation dedicated to accelerating collaboration and innovation in financial services through the adoption of open-source software, standards, and best practices. As the Web3 ecosystem expands, the sophistication of illicit financial activities increases, posing significant risks to its stability and mainstream adoption. Notably, stablecoins have emerged as a preferred medium for illicit transactions due to their price stability and widespread acceptance across DeFi protocols. OpenAML addresses these challenges with a sophisticated Risk Analysis & Detection Engine that leverages advanced artificial intelligence, including supervised and unsupervised machine learning techniques. Our platform processes vast amounts of blockchain data to identify suspicious patterns, score transaction risks, and provide actionable insights through APIs, reports, and real-time alerts. Originating as a winning project at the DTCC AI Hackathon, OpenAML aims to empower financial institutions, crypto businesses, and regulatory bodies with the tools necessary to foster a safer and more trustworthy digital asset environment.
 
-### Team Information
-Cartier Huang | <cartier.huang@duke.edu> | https://github.com/cw183
 
-Haochen Li | <haochen.li2@duke.edu>	| https://github.com/Harrisous
 
-Luciano Juvinski | <luciano.silva@duke.edu> | https://github.com/juv1nsk1
+## Project Structure
 
-Yifei Ren | <yifei.ren@duke.edu> | https://github.com/yifei888
+* [**Models**](./Models) – Contains the final trained machine learning models for community use. The models were trained on data from over **30,000 wallets**, using **16 transaction-based features**. These include aggregated counts and values of incoming and outgoing transactions (e.g., total volume, large/small transfers, and interactions with unique wallets).
 
-Yiqing Liu | <yiqing.liu@duke.edu> | https://github.com/ludaladila
+* [**Raw\_Data**](./Data) – Includes a dataset of over **250,000 flagged wallets** involved in illicit activity, including addresses sanctioned by the **SEC** and **OFAC**.
 
-### Project Structure
-1. Data sourcing and processing
-.\data-pipeline
-2. Stucture for model data processing and model training
-```
-DTCH-2025-CIPHER/
-│── data/
-│   ├── raw.csv              # Original dataset
-│
-│── models/                  # Trained machine learning models
-│   ├── CatBoost.joblib
-│   ├── LightGBM.joblib
-│   ├── LogisticRegression.joblib
-│   ├── RandomForest.joblib
-│   ├── XGBoost.joblib
-│   ├── scaler.pkl           # Pre-fitted scaler for normalization
-│
-│── test_post/               # Prediction outputs
-│   ├── predict_prob0.json
-│   ├── predict_prob1.json
-│
-│── utils/                   # Utility scripts for data processing & modeling
-│   ├── data_info.py
-│   ├── data_process.py
-│   ├── catboost_model.py
-│   ├── lightgbm_model.py
-│   ├── logistic_regression.py
-│   ├── random_forest.py
-│   ├── xgboost_model.py
-│
-│── venv/                    # Virtual environment (ignored in Git)
-│── app.py                    # Main script for running model inference
-│── requirements.txt          # Dependencies list
-│── README.md                 # Project documentation
-│── LICENSE                   # License information
-│── .gitignore                # Git ignore file
-```
-3. App that host API for request
-.\site-sentinel
+* [**DTCC\_AI\_Hackathon\_Project**](./Project_DTCC_AI_Hackathon) – The original project prototype that won the **Academic Prize** at the **DTCC AI Hackathon**. Developed by a team of **Duke University** Master’s students in **AI** and **FinTech**.
 
-## Installation & Setup
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/yourusername/DTCH-2025-CIPHER.git
-cd DTCH-2025-CIPHER
-```
-
-### 2️⃣ Create a Virtual Environment (Optional)
-```bash
-python -m venv venv
-source venv/bin/activate  # For Mac/Linux
-venv\Scripts\activate     # For Windows
-```
-
-### 3️⃣ Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-## Usage
-### 🔹 Train a Model
-Run the corresponding script from the `utils/` folder to train an individual model. Example:
-```bash
-python utils/random_forest.py
-```
-The model will be stored in ./models as joblib files
-
-### 🔹 Make Online Predictions
-Use `app.py` or a trained model from `models/` to generate predictions:
-```bash
-python app.py
-```
-
-## Machine Learning Pipeline
-The pipeline consists of the following stages:
-### Data Preprocessing
-   - Load raw data (the same data from previous step "data sourcing and processing")
-   - Handle missing values, outliers, uncessary features, feature mapping  
-   - Scale numerical features
-   - Data Augumentation using SMOTE to achieve 6:4 majority and minority ratio
-   - Export processed data to processed.csv
-
-### Model Training
-0. Split data into training and testing sets
-1. Train multiple models:
-   - Logistic Regression
-   - CatBoost
-   - LightGBM
-   - XGBoost
-   - Random Forest
-
-2. Use **GridSearchCV** for hyperparameter tuning  
-3. Evaluate models using cross-validation 
 
 ## Using DCO to sign your commits
 
