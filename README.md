@@ -11,7 +11,7 @@ Open and Intelligent Compliance for On-Chain Anti-Money Laundering.
 
 ## Project Structure
 
-* [**Models**](./Models) – Contains the final trained machine learning models for community use. The models were trained on data from over **30,000 wallets**, using **16 transaction-based features**. These include aggregated counts and values of incoming and outgoing transactions (e.g., total volume, large/small transfers, and interactions with unique wallets).
+* [**Model**](./Model) – Contains the final trained machine learning models for community use. The models were trained on data from over **30,000 wallets**, using **16 transaction-based features**. These include aggregated counts and values of incoming and outgoing transactions (e.g., total volume, large/small transfers, and interactions with unique wallets).
 
 * [**Raw\_Data**](./Data) – Includes a dataset of over **250,000 flagged wallets** involved in illicit activity, including addresses sanctioned by the **SEC** and **OFAC**.
 
