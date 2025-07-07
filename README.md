@@ -13,7 +13,9 @@ Open and Intelligent Compliance for On-Chain Anti-Money Laundering.
 
 * [**Model**](./Model) – Contains the final trained machine learning models for community use. The models were trained on data from over **30,000 wallets**, using **16 transaction-based features**. These include aggregated counts and values of incoming and outgoing transactions (e.g., total volume, large/small transfers, and interactions with unique wallets).
 
-* [**Raw\_Data**](./Data) – Includes a dataset of over **250,000 flagged wallets** involved in illicit activity, including addresses sanctioned by the **SEC** and **OFAC**.
+* [**Data**](./Data) – Includes a dataset of over **250,000 flagged wallets** involved in illicit activity, including addresses sanctioned by the **SEC** and **OFAC**.
+
+* [**Whitepaper**](./Whitepaper.md) -  Technical and strategic overview of the OpenAML project, including architecture, AI methodology, data pipeline, use cases, and team background.
 
 * [**DTCC\_AI\_Hackathon\_Project**](./Project_DTCC_AI_Hackathon) – The original project prototype that won the **Academic Prize** at the **DTCC AI Hackathon**. Developed by a team of **Duke University** Master’s students in **AI** and **FinTech**.
 
