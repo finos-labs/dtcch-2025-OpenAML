@@ -7,8 +7,8 @@ This folder contains structured datasets of blockchain wallet addresses categori
 
 ### 📦 Dataset Summary
 
-* **Total Wallets**: \~250,000 vetted and annotated addresses
-* **Last Update**: July 7, 2025
+* **Total Wallets**: \~500,000 vetted and annotated addresses
+* **Last Update**: July 8, 2025
 * **Data Format**: CSV files grouped by primary risk category
 
 These records are grouped into **three distinct risk categories**, aligned with Anti-Money Laundering (AML) and financial crime typologies.
@@ -62,7 +62,7 @@ These addresses pose significant risk to retail users and reputation-sensitive p
 
 ```csv
 blockchain,wallet_address,flag
-Ethereum,0x1265bc855fd628aff6fed3fe4857a1b3b3597cfe,Bybit hack
+Ethereum,0x1265bc855fd628aff6fed3fe4857a1b3b3597cfe,Fraud - Bybit hack
 ```
 
 
