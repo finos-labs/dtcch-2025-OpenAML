@@ -21,7 +21,7 @@ Open and Intelligent Compliance for On-Chain Anti-Money Laundering.
 
 * [**DTCC\_AI\_Hackathon\_Project**](./Project_DTCC_AI_Hackathon) – The original project prototype that won the **Academic Prize** at the **DTCC AI Hackathon**. Developed by a team of **Duke University** Master’s students in **AI** and **FinTech**.
 
-
+* [**StableAML\_Paper**](./StableAML_Paper) – StableAML is the first labeled dataset specifically constructed for **stablecoin AML research**.
 
 
 ## License
