@@ -1,0 +1,436 @@
+Below is a **structured glossary of blockchain-related financial crime and money laundering terminology**, designed with both operational and research depth in mind (patterns, actors, typologies, and behavioral signals). This should be useful for analytical modeling, compliance architecture, and academic framing.
+
+---
+
+# 🔎 Glossary of Blockchain Crimes & AML Terminology
+
+---
+
+## A
+
+### **Address Poisoning**
+
+A deception tactic where attackers send small amounts of crypto from addresses visually similar to a victim’s past transaction counterparties, hoping the victim mistakenly copies and reuses the attacker’s address.
+
+**Pattern signals:**
+
+* Low-value inbound transfers
+* Similar address prefix/suffix to known counterparties
+* No prior interaction graph relationship
+
+---
+
+### **Advanced Persistent Threat (APT) Groups**
+
+State-sponsored or state-aligned hacking organizations conducting long-term cyber operations, often including crypto theft.
+
+**Example Actor:** Lazarus Group (North Korea)
+
+---
+
+### **Anti-Money Laundering (AML)**
+
+Regulatory and technological frameworks designed to detect, prevent, and report illicit financial flows.
+
+In blockchain contexts, AML often involves:
+
+* Transaction monitoring
+* Wallet risk scoring
+* Behavioral clustering
+* On-chain forensic tracing
+
+---
+
+## B
+
+### **Blockchain Forensics**
+
+Analytical methodologies used to trace illicit funds across public ledgers using graph analysis, heuristics, clustering, and behavioral profiling.
+
+---
+
+### **Bridge Exploit**
+
+Attack targeting cross-chain bridges to steal locked assets.
+
+**Pattern signals:**
+
+* Sudden large outflows from bridge contracts
+* Exploitation transaction preceding drain event
+* Rapid laundering through mixers and cross-chain swaps
+
+---
+
+## C
+
+### **Chain Hopping**
+
+Rapid conversion of funds across multiple blockchains to complicate tracing.
+
+**Pattern signals:**
+
+* Transfers through bridges or swap protocols
+* Short dwell time between chains
+* Fragmented transaction paths
+
+---
+
+### **Clustering (Wallet Clustering)**
+
+Heuristic grouping of addresses likely controlled by the same entity.
+
+Common heuristics:
+
+* Multi-input transaction heuristic
+* Change address detection
+* Behavioral similarity metrics
+
+---
+
+### **CoinJoin**
+
+Privacy-enhancing technique where multiple users combine transactions to obfuscate fund origin.
+
+**Pattern signals:**
+
+* Equal output amounts
+* Coordinated multi-party inputs
+* Structured denomination outputs
+
+---
+
+### **Compliance Evasion Infrastructure**
+
+Layered laundering architecture including mixers, shell wallets, OTC brokers, and mule accounts.
+
+---
+
+## D
+
+### **Darknet Markets (DNMs)**
+
+Online marketplaces operating on Tor or similar networks, accepting cryptocurrency for illicit goods/services.
+
+**Pattern signals:**
+
+* Regular mid-sized inbound transfers from retail wallets
+* Consolidation into high-volume treasury wallets
+* Interaction with known DNM clusters
+
+---
+
+### **DeFi Exploit**
+
+Smart contract vulnerability used to drain funds.
+
+**Pattern signals:**
+
+* Flash loan usage
+* Abnormal contract calls
+* Immediate laundering through DEX swaps
+
+---
+
+### **Dusting Attack**
+
+Sending tiny amounts of cryptocurrency to multiple wallets to analyze subsequent movement and deanonymize users.
+
+---
+
+## E
+
+### **Exit Scam**
+
+Fraud where project founders disappear with investor funds (common in ICOs, NFT mints, DeFi protocols).
+
+**Pattern signals:**
+
+* Liquidity pool drain
+* Sudden admin key transfer
+* Treasury wallet emptied to new addresses
+
+---
+
+## F
+
+### **Flash Loan Attack**
+
+Uncollateralized loan used within a single transaction to manipulate price or exploit vulnerabilities.
+
+Often used in DeFi protocol exploits.
+
+---
+
+## H
+
+### **Hawala (Crypto-Enabled Informal Value Transfer)**
+
+Off-chain settlement system using crypto as bridging asset.
+
+**Pattern signals:**
+
+* Repeated bilateral transfers
+* High velocity, low profit margin spreads
+* Interaction with high-risk jurisdictions
+
+---
+
+## L
+
+### **Layering (Money Laundering Stage 2)**
+
+Complex movement of funds to obscure origin after placement.
+
+On-chain manifestations:
+
+* Splitting into many wallets
+* Use of mixers
+* Cross-chain swaps
+* NFT wash transactions
+
+---
+
+### **Lazarus Group**
+
+North Korean state-sponsored hacking organization responsible for major crypto thefts.
+
+**Notable incidents:**
+
+* Ronin Bridge hack (2022)
+* Harmony Horizon Bridge hack
+* Multiple exchange breaches
+
+**Behavioral laundering pattern:**
+
+1. Initial consolidation
+2. Splitting into smaller wallets
+3. Mixing (Tornado Cash historically)
+4. Chain hopping (ETH → BTC via swaps)
+5. OTC cash-out via Asia-based brokers
+
+**Key traits:**
+
+* Long dormancy periods
+* Structured laundering phases
+* Use of DeFi infrastructure
+
+---
+
+## M
+
+### **Mixer (Tumblers)**
+
+Services that obfuscate transaction history by pooling and redistributing funds.
+
+Examples:
+
+* Tornado Cash (Ethereum)
+* Wasabi (Bitcoin CoinJoin)
+
+**Pattern signals:**
+
+* Fixed denomination deposits
+* Time-delayed withdrawals
+* Large anonymity sets
+
+---
+
+### **Money Mule**
+
+Individual knowingly or unknowingly transferring illicit funds on behalf of criminals.
+
+On-chain behavior:
+
+* Receives high-risk funds
+* Rapid transfer to exchange
+* Low wallet age
+
+---
+
+## O
+
+### **OTC Broker (High-Risk)**
+
+Over-the-counter intermediaries facilitating large crypto trades, sometimes used to convert illicit funds into fiat.
+
+---
+
+## P
+
+### **Peel Chain**
+
+A laundering technique where funds are slowly “peeled” off from a large balance across sequential transactions.
+
+**Pattern signals:**
+
+* Repeated outgoing transactions of slightly smaller value
+* Single dominant input source
+* Linear chain structure
+
+---
+
+### **Placement (Money Laundering Stage 1)**
+
+Initial introduction of illicit funds into the financial system.
+
+In crypto:
+
+* Deposit to exchange
+* Swap into stablecoins
+* Use in DeFi lending
+
+---
+
+## R
+
+### **Ransomware**
+
+Malware encrypting victim data in exchange for crypto payment.
+
+**Pattern signals:**
+
+* Many inbound transactions with identical ransom amounts
+* Consolidation wallet behavior
+* Interaction with mixers post-collection
+
+---
+
+### **Rug Pull**
+
+DeFi or NFT scam where liquidity is withdrawn by creators.
+
+**Pattern signals:**
+
+* LP token withdrawal
+* Admin privilege misuse
+* Immediate sell-off of token supply
+
+---
+
+## S
+
+### **Sanctions Evasion**
+
+Use of crypto to bypass international financial restrictions.
+
+**Pattern signals:**
+
+* Interaction with OFAC-listed wallets
+* Jurisdictional clustering
+* Stablecoin usage with offshore OTC desks
+
+---
+
+### **Smurfing (Structuring)**
+
+Breaking large transfers into smaller amounts to avoid detection thresholds.
+
+On-chain analog:
+
+* High-frequency sub-threshold transfers
+* Multiple exchange deposit addresses
+
+---
+
+### **Stablecoin Laundering**
+
+Conversion of volatile crypto into USDT/USDC to stabilize value before cash-out.
+
+Often observed in:
+
+* Exchange hacks
+* DeFi exploits
+* State-sponsored thefts
+
+---
+
+## T
+
+### **Terrorist Financing**
+
+Funding extremist groups via cryptocurrency.
+
+**Pattern signals:**
+
+* Small recurring retail donations
+* Public fundraising addresses
+* Rapid forwarding to operational wallets
+
+---
+
+### **Transaction Graph Obfuscation**
+
+Use of:
+
+* Mixers
+* Chain hopping
+* NFT wash trading
+* DEX swaps
+* Privacy coins
+
+---
+
+## W
+
+### **Wash Trading**
+
+Artificial transaction volume to simulate activity or launder funds.
+
+On-chain signals:
+
+* Repeated buy/sell between related wallets
+* Minimal net position change
+* High gas-to-volume ratio
+
+---
+
+# 💰 Classical Money Laundering Framework (Applied to Blockchain)
+
+| Stage       | Traditional Finance   | Blockchain Equivalent                    |
+| ----------- | --------------------- | ---------------------------------------- |
+| Placement   | Cash deposit          | Exchange deposit, DEX swap               |
+| Layering    | Shell companies       | Mixers, chain hopping, peel chains       |
+| Integration | Legitimate investment | OTC cash-out, real-world asset purchases |
+
+---
+
+# 🧠 Behavioral Pattern Taxonomy (For Modeling)
+
+You may find this classification useful for feature engineering:
+
+### 1. Flow-Based Features
+
+* In/out degree
+* Flow centrality
+* Transaction entropy
+* Dwell time
+
+### 2. Structural Features
+
+* Clustering coefficient
+* Motif detection (peel chains, star patterns)
+* Community detection
+
+### 3. Temporal Features
+
+* Burstiness
+* Dormancy period
+* Time-to-mix
+
+### 4. Counterparty Risk Features
+
+* % interaction with sanctioned wallets
+* Exposure to mixers
+* Bridge interaction frequency
+
+---
+
+# 🌍 Major State-Linked or Organized Actors
+
+| Actor           | Country       | Modus Operandi                                         |
+| --------------- | ------------- | ------------------------------------------------------ |
+| Lazarus Group   | North Korea   | Exchange hacks, bridge exploits, structured laundering |
+| APT38           | North Korea   | Financial cybercrime subgroup                          |
+| Conti (defunct) | Russia-linked | Ransomware                                             |
+| REvil (defunct) | Russia-linked | Ransomware-as-a-Service                                |
+

@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+:root {
+    background-color: #020617;
+}
+
+.prose table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: rgba(2, 6, 23, 0.8);
+}
+
+th {
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+    background-color: rgba(15, 23, 42, 0.8);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #38bdf8;
+    padding: 10px;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+    border-right: 1px solid rgba(56, 189, 248, 0.1);
+    text-align: left;
+}
+
+td {
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    color: #94a3b8;
+    padding: 8px 10px;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+    border-right: 1px solid rgba(56, 189, 248, 0.1);
+}
+
+th:last-child,
+td:last-child {
+    border-right: none;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.prose::-webkit-scrollbar {
+    height: 5px;
+}
+
+.prose::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.prose::-webkit-scrollbar-thumb {
+    background: rgba(56, 189, 248, 0.3);
+    border-radius: 10px;
+}
+
+.prose::-webkit-scrollbar-thumb:hover {
+    background: rgba(56, 189, 248, 0.6);
+}
+
+.prose p {
+    line-height: 2;
+    margin-bottom: 0.4rem;
+}
+
+.prose li {
+    line-height: 2;
+    margin-bottom: 0.4rem;
+}
+
+.prose strong {
+    font-weight: 600;
+    color: #b2bad9;
+}
+
+.prose code {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 12px;
+    color: #94a3b8;
+    background-color: #020617;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+.prose h1 {
+    font-size: 1.1em;
+}
+
+.prose h2 {
+    font-size: 1.1em;
+}
+
+.prose h3 {
+    font-size: 1.2em;
+}
+
+
+.about-content ul {
+    list-style-type: disc !important;
+    padding-left: 1.5rem !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.about-content li {
+    margin-bottom: 0.5rem !important;
+    display: list-item !important;
+    color: #94a3b8;
+}
+
+.about-content li::marker {
+    color: #38bdf8;
+}
+
+.prose:not(.about-content) ul {
+    list-style: none;
+    padding: 0;
+}

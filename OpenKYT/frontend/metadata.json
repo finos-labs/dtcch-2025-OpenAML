@@ -1,0 +1,5 @@
+{
+  "name": "OpenKYT Chat",
+  "description": "A ChatGPT style interface with streaming responses.",
+  "requestFramePermissions": []
+}

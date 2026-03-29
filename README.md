@@ -23,10 +23,9 @@ Open and Intelligent Compliance for On-Chain Anti-Money Laundering.
 
 * [**StableAML\_Paper**](./StableAML_Paper) – StableAML is the first labeled dataset specifically constructed for **stablecoin AML research**.
 
+* [**OpenKYT**](./OpenKYT/) - OpenKYT is an AI-powered blockchain analytics that combines Large Language Models (LLMs) with live  blockchain data to provide deep insights into transaction patterns, risk scoring, and compliance reporting.
 
 ## License
-
-Copyright 2025 FINOS
 
 Distributed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
