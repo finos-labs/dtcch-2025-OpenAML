@@ -15,7 +15,7 @@ description: >
 version: 1.0.0
 license: MIT
 authors:
-  - @juvinski
+  - Luciano Juvinski
 references:
   - FATF Recommendations 15 & 16 (fatf-gafi.org)
   - IVMS 101 Standard (intervasp.org)
