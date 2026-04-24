@@ -25,6 +25,8 @@ Open and Intelligent Compliance for On-Chain Anti-Money Laundering.
 
 * [**OpenKYT**](./OpenKYT/) - OpenKYT is an AI-powered blockchain analytics that combines Large Language Models (LLMs) with live  blockchain data to provide deep insights into transaction patterns, risk scoring, and compliance reporting.
 
+* [**Skills**](./Skills/) – The Compliance skill translates frameworks such as FATF Recommendation 16, IVMS 101, and EU TFR/AMLA into code, enabling automated payload validation for VASP-to-VASP data exchange, the generation of jurisdiction-specific SAR/STR reports for the US, EU, and Singapore, and deterministic verification for DeFi, unhosted wallets, and cross-chain transfers.
+
 ## License
 
 Distributed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
