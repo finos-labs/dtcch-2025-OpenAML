@@ -42,3 +42,55 @@ Create and check out a dedicated feature branch from the previous branch push (`
    - Implement `/src/finos/graph/builder.ts` (Directed graph construction).
    - Implement unit & integration test coverage with Playwright.
 
+---
+
+## [2026-09-26T07:59:00+02:00] Prompt 3.1: Blockchain RPC Graph Feature Ingestion Pipeline
+
+### Task Description
+Implement Prompt 3.1 according to `plan-case3-finos-openaml.md`:
+1. Build `/src/finos/ingestion/rpc_indexer.ts` to fetch ERC-20 transfer logs, smart contract calls, and wallet balances via Ethereum/EVM JSON-RPC nodes with exponential backoff and provider failover.
+2. Build `/src/finos/graph/builder.ts` to construct lightweight directed transactional sub-graphs (nodes = wallets, edges = token transfers with value/timestamp attributes) supporting >10,000 nodes with high memory efficiency.
+3. Build unit test suite in `/test/rpc_parser.spec.ts` testing ERC-20 event parsing, EIP-55 checksum normalization, and graph node/edge integrity from sample block receipts.
+4. Build integration test suite in `/integration/rpc_graph_ingest.integration.spec.ts` using Playwright (`npx playwright test`) to mock RPC node responses and validate graph topology generation and rate-limit recovery.
+
+### Step-by-Step Implementation Walkthrough
+
+#### Step 1: Tooling & Infrastructure Setup
+- Create root [`package.json`](file:///c:/Users/DELL/Stsack/dtcch-2025-OpenAML/package.json) with TypeScript, tsx, Playwright (`@playwright/test`), and ethers/viem or standard native fetch utilities for JSON-RPC.
+- Configure [`tsconfig.json`](file:///c:/Users/DELL/Stsack/dtcch-2025-OpenAML/tsconfig.json) for strict TypeScript compilation.
+- Configure [`playwright.config.ts`](file:///c:/Users/DELL/Stsack/dtcch-2025-OpenAML/playwright.config.ts) with `fullyParallel: true` and integration test matching.
+
+#### Step 2: Ingestion Engine (`/src/finos/ingestion/rpc_indexer.ts`)
+- Define TypeScript types: `RawBlockReceipt`, `ERC20TransferLog`, `RPCProviderConfig`, `WalletBalance`.
+- Implement `RPCIndexer` class:
+  - Multi-provider connection pool with round-robin / fallback failover.
+  - Exponential backoff retry handler with jitter for HTTP 429 (Too Many Requests) and 5xx errors.
+  - EIP-55 address normalization function.
+  - `fetchTransferLogs(fromBlock, toBlock, contractAddresses?)`: queries `eth_getLogs` for ERC-20 `Transfer(address,address,uint256)`.
+  - `fetchWalletBalance(address, blockTag?)`: queries `eth_getBalance`.
+  - `executeContractCall(to, data, blockTag?)`: queries `eth_call`.
+
+#### Step 3: Transactional Graph Builder (`/src/finos/graph/builder.ts`)
+- Define graph types: `WalletNode`, `TokenTransferEdge`, `TransactionGraph`.
+- Implement `TransactionGraphBuilder`:
+  - In-memory adjacency list backed by `Map<string, Set<string>>` and flat edge pools to ensure minimal memory overhead for 10k+ nodes.
+  - `addTransfer(transfer: ERC20TransferLog)`: adds/updates source and destination wallet nodes, increments degree metrics, and appends edge metadata (token, amount, timestamp, blockNumber, txHash).
+  - `getSubGraph(walletAddress: string, maxHops: number)`: extracts localized neighborhood for downstream AML anomaly classification.
+  - Graph statistics reporting: node count, edge count, density, top hubs.
+
+#### Step 4: Unit Testing (`/test/rpc_parser.spec.ts`)
+- Test receipt log parsing for ERC-20 transfers (USDT, USDC, DAI 6-decimal & 18-decimal tokens).
+- Test EIP-55 checksumming edge cases.
+- Test graph construction: verifying directed edge direction, attribute retention, and duplicate handling.
+
+#### Step 5: Playwright Parallel Integration Testing (`/integration/rpc_graph_ingest.integration.spec.ts`)
+- Playwright runner with stateless mock RPC server intercepting JSON-RPC requests.
+- Verify failover behavior when the primary RPC endpoint returns HTTP 429.
+- Verify end-to-end block ingestion resulting in structured sub-graphs.
+
+#### Step 6: Verification & Quality Gate
+- Run full test suite: `npx playwright test`.
+- Verify memory consumption during synthetic 10,000-node graph generation.
+- Format all modified files.
+
+
