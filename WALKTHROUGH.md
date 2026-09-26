@@ -25,3 +25,20 @@ Update the existing OpenAML Pull Request **[PR #10](https://github.com/finos-lab
 
 3. **Authentication & PR Updating:**
    - Since `github-mcp-server` requires `GITHUB_PERSONAL_ACCESS_TOKEN` in `C:\Users\DELL\.gemini\antigravity-ide\mcp_config.json` for write API calls, provide the complete, formatted PR payload directly to the user for instant one-click updating on GitHub or configuring the token.
+
+---
+
+## [2026-09-26T07:54:00+02:00] Branch Creation: `feature/case3-step1-blockchain-graph-pipeline`
+
+### Task Description
+Create and check out a dedicated feature branch from the previous branch push (`openAMLDemo`, commit `dd0233e`) for **Prompt 3.1: Blockchain RPC Graph Feature Ingestion Pipeline**, aligning with the Case 3 technical execution plan in `plan-case3-finos-openaml.md`.
+
+### Implementation Status
+1. **Source Commit:** `dd0233e` (`openAMLDemo`)
+2. **Branch Name:** `feature/case3-step1-blockchain-graph-pipeline`
+3. **Upstream Remote Tracking:** `origin/feature/case3-step1-blockchain-graph-pipeline` established.
+4. **Next Planned Milestones:**
+   - Implement `/src/finos/ingestion/rpc_indexer.ts` (EVM RPC transfer logs parser).
+   - Implement `/src/finos/graph/builder.ts` (Directed graph construction).
+   - Implement unit & integration test coverage with Playwright.
+
