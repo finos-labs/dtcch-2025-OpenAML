@@ -24,7 +24,9 @@ Open and Intelligent Compliance for On-Chain Anti-Money Laundering.
 
 * [**StableAML\_Paper**](./StableAML_Paper) – StableAML is the first labeled dataset specifically constructed for **stablecoin AML research**.
 
-* [**OpenKYT**](./OpenKYT/) - OpenKYT is an AI-powered blockchain analytics that combines Large Language Models (LLMs) with live  blockchain data to provide deep insights into transaction patterns, risk scoring, and compliance reporting.
+* [**OpenKYT**](./OpenKYT/) - OpenKYT is an AI-powered blockchain analytics platform that combines Large Language Models (LLMs) with live blockchain data to provide deep insights into transaction patterns, risk scoring, and compliance reporting. Local development backend and frontend services can be launched concurrently using [`start_openkyt.ps1`](./start_openkyt.ps1) or [`run_dev.ps1`](./run_dev.ps1).
+
+* [**Case 3 Architecture Plan**](./plan-case3-finos-openaml.md) – End-to-end technical specification for on-chain Web3 and stablecoin anomaly detection, detailing blockchain RPC feature extraction, Bloom-filter sanctioned wallet tagging with multi-hop taint analysis, and GNN scoring with FINOS Common Domain Model (CDM) compliance reporting.
 
 * [**Skills**](./Skills/) – The Compliance skill translates frameworks such as FATF Recommendation 16, IVMS 101, and EU TFR/AMLA into code, enabling automated payload validation for VASP-to-VASP data exchange, the generation of jurisdiction-specific SAR/STR reports for the US, EU, and Singapore, and deterministic verification for DeFi, unhosted wallets, and cross-chain transfers.
 
