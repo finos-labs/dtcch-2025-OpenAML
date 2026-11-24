@@ -28,6 +28,10 @@ Open and Intelligent Compliance for On-Chain Anti-Money Laundering.
 
 * [**Skills**](./Skills/) – The Compliance skill translates frameworks such as FATF Recommendation 16, IVMS 101, and EU TFR/AMLA into code, enabling automated payload validation for VASP-to-VASP data exchange, the generation of jurisdiction-specific SAR/STR reports for the US, EU, and Singapore, and deterministic verification for DeFi, unhosted wallets, and cross-chain transfers.
 
+## Built with OpenAML
+
+* [**Newton Protocol wallet screening demo**](https://newton-openaml-demo.vercel.app): Checks a wallet against the labeled addresses in [Data](./Data) before a payment. A visitor chooses which lists block a transfer (Sanctioned, Blocked, Fraud, Flagged). Newton Protocol operators screen the recipient and sign one verdict, Blocked or Allowed, on Ethereum Sepolia. Source code: [newt-foundation/newton-openaml-demo](https://github.com/newt-foundation/newton-openaml-demo).
+
 ## License
 
 Distributed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
